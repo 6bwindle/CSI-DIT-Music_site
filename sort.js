@@ -53,7 +53,7 @@ $(document).on("click", ".heading", function(){
 document.getElementById("search-input").addEventListener("input", function(e){
     var bg_count = 0
     $(".data-parent").each(function(){
-        var input = $("#search-input").val().toLowerCase()
+        var input = $("#search-input").val().toLowerCase().trim()
         
         if ($(this).data("title").toLowerCase().includes(input) || $(this).data("artist").toLowerCase().includes(input) || $(this).data("genre").toLowerCase().includes(input) || $(this).data("duration").toLowerCase().includes(input)){
             $(this).show()
