@@ -22,7 +22,9 @@
         <div id="container">
 
             
-
+<?php
+require_once("navbar.php")
+?>
 
             <div id = "table-container">
                 
