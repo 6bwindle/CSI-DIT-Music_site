@@ -15,7 +15,10 @@
                 session_start();
             }
         ?>
-        
+        <div id="jank-loader">
+            <img src="img/loading_background.png">
+            <img src="img/loading_foreground.png">
+        </div>
         <div id="container">
 
             
@@ -51,4 +54,5 @@
         </div>
     </body>
     <script src="sort.js"> </script>
+    <script src="audio_length.js"> </script>
 </html>
