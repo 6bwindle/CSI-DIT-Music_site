@@ -38,10 +38,17 @@ foreach ($results_array as $array_value){
     else{
         $artist = join(", ", $array_value[2]);
     }
-    $file =  $array_value[3];
+    if (is_dir("music_actual")){
+        $file_path = "music_actual";
+    }
+    else{
+        $file_path = "music";
+    }
+
+    $file = $file_path . "/" . $filename
     ?>
     
-    <div class="grid-parent data-parent" data-title = "<?php echo $song_name; ?>" data-artist = "<?php echo $artist ?>" data-genre = "<?php echo $genre; ?>" data-duration = "<?php echo $pk . ":00"; ?>" data-filename = "music/<?php echo $filename; ?>">
+    <div class="grid-parent data-parent" data-title = "<?php echo $song_name; ?>" data-artist = "<?php echo $artist ?>" data-genre = "<?php echo $genre; ?>" data-duration = "<?php echo $pk . ":00"; ?>" data-filename = "<?php echo $file; ?>">
                     <div class="grid-child">
                     <?php
                     if (isset($_SESSION["user_id"])){
@@ -60,7 +67,7 @@ foreach ($results_array as $array_value){
                         <p><?php echo $genre?></p>
                     </div>
                     <div class = "grid-child">
-                        <audio preload = "metadata" class="child-audio" src="music/<?php  echo  $filename?>" preload="metadata"> </audio>
+                        <audio preload = "metadata" class="child-audio" src="<?php echo $file;?>" preload="metadata"> </audio>
                         <p class="duration"></p>
                     </div>
                 </div>
