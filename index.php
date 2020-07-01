@@ -43,19 +43,33 @@
                 </div>
             </div>
         <div id="container">
-        <div id="banner">
+
+            
+
+            <div id="banner">
             <div id="scroll-button">&#9660; </div>
             </div>
-            
-<?php
-require_once("navbar.php")
-?>
+            <?php
+                require_once("navbar.php");
+            ?>
 
             <div id = "table-container">
                 
                 <div class ="table-heading grid-parent" id="table-heading">
-                    <div></div>
+                    
+                <form id="search-form">
+                <div id="close-search">
+                    </div>
+            <input type="text" id="search-input" placeholder="Enter search here...">
+            <div id="start-search">
+        </div>
+        </form>
 
+                <div >
+                    <div id="search-button">
+
+                    </div>
+                </div>
                     <div class="grid-child">
                         <h2 class="heading" data-type="title" data-sort = "asc">Song </h2><h2 class="arrow">&#9660;</h2><h2 class="arrow">&#9650;</h2>
                     </div>
@@ -80,9 +94,8 @@ require_once("navbar.php")
 
         </div>
     </body>
-    <script src="sort.js"> </script>
-    <script src="audio_length.js"> </script>
-    <script src="move_down.js"> </script>
-    <script src="log-in-js.js"> </script>
-    <script src="custom_audio.js"> </script>
+    <script src="sort.js"></script>
+        <script src="custom_audio.js"> </script>
+        <script src="log-in-js.js"> </script>
+        <script src="move_down.js"> </script>    
 </html>
