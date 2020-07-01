@@ -10,7 +10,20 @@
                     if (isset($_SESSION["user_id"])){
 
                 ?>
-                
+                <audio id="audio-player"></audio>
+                <div id="audio-controls" class="nav-element">
+                    <div id = "control-play-button"onclick = "playMusic()"></div>
+                    <div id="now-playing"><p></p><p></p></div>
+                    <div id="clickable-seeker-area">
+                    <div id="seeker-ball">
+                    </div>
+                        <div id="empty-seeker">
+                        <div id="full-seeker">
+                            
+                    </div>
+                    </div>
+                    </div>
+                </div>
                 <?php 
                     }
                 ?>

@@ -84,4 +84,5 @@ require_once("navbar.php")
     <script src="audio_length.js"> </script>
     <script src="move_down.js"> </script>
     <script src="log-in-js.js"> </script>
+    <script src="custom_audio.js"> </script>
 </html>
