@@ -20,7 +20,9 @@
             <img src="img/loading_foreground.png">
         </div>
         <div id="container">
-
+        <div id="banner">
+            <div id="scroll-button">&#9660; </div>
+            </div>
             
 <?php
 require_once("navbar.php")
@@ -57,4 +59,5 @@ require_once("navbar.php")
     </body>
     <script src="sort.js"> </script>
     <script src="audio_length.js"> </script>
+    <script src="move_down.js"> </script>
 </html>
