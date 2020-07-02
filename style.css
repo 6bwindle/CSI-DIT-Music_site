@@ -89,7 +89,7 @@ html{
 }
 
 #volume-area{
-    width:30%;
+    width:25%;
     height:75%;
     position:absolute;
     left:75%;
@@ -102,6 +102,10 @@ html{
     background-repeat:no-repeat;
     background-size:contain;
 
+}
+
+#volume-icon:hover{
+    background-image: url("img/empty_volume.png")
 }
 
 #now-playing{
@@ -187,6 +191,26 @@ html{
 #seeker-ball:hover{
     cursor:pointer;
 }
+
+#volume-empty{
+    height:25%;
+    position:absolute;
+    width:55%;
+    left:25%;
+    background-color:#FaF;
+    top:37.5%;
+}
+
+#volume-full{
+    height:100%;
+
+    position:absolute;
+    background-color:#FFFFFF;
+    left:0;
+    top:0;
+}
+
+
 
 p{
     margin-top:0;

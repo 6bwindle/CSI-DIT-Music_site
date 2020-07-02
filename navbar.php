@@ -24,9 +24,12 @@
                     </div>
                     </div>
                     <div id="volume-area">
-                        <div id="volume-icon">
-
+                        <div id="volume-icon"></div>
+                        <div id="volume-empty">
+                        <div id="volume-full"></div>
+                        <div id="volume-ball"></div>
                         </div>
+                        
                     </div>
                 </div>
                 <?php 
