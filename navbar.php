@@ -23,6 +23,11 @@
                     </div>
                     </div>
                     </div>
+                    <div id="volume-area">
+                        <div id="volume-icon">
+
+                        </div>
+                    </div>
                 </div>
                 <?php 
                     }
