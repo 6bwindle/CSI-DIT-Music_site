@@ -193,6 +193,7 @@ html{
 }
 
 #volume-empty{
+    display:none;
     height:25%;
     position:absolute;
     width:55%;
