@@ -104,9 +104,6 @@ html{
 
 }
 
-#volume-icon:hover{
-    background-image: url("img/empty_volume.png")
-}
 
 #now-playing{
     font-family: Arial, sans-serif;

@@ -37,6 +37,32 @@ var getNav = setInterval(function(){
 
 
         clearInterval(getNav)
+
+        volume_empty = document.getElementById("volume-empty")
+        volume_full = document.getElementById("volume-full")
+        volume_parent = document.getElementById("volume-area")
+
+        volume_parent.addEventListener("mouseenter", function(event){
+                volume_full.style.display = "block"
+                volume_empty.style.display = "block"
+                document.getElementById("volume-icon").style.backgroundImage = "url('img/empty_volume.png')"
+        })
+
+        volume_parent.addEventListener("mouseleave", function(event){
+            volume_full.style.display = "none"
+            volume_empty.style.display = "none"
+            document.getElementById("volume-icon").style.backgroundImage = "url('img/volume.png')"
+    })
+
+
+        volume_parent.addEventListener("click", function(e){
+            var x = e.pageX - $("#volume-full").offset().left
+
+            if (x >=0 && x <= $("#volume-empty").width()){
+                $("#volume-full").width(x)
+            }
+        })
+
         seeker_large = document.getElementById("clickable-seeker-area")
         seeker_empty = document.getElementById("empty-seeker")
         seeker_full = document.getElementById("full-seeker")
