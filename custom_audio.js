@@ -55,11 +55,16 @@ var getNav = setInterval(function(){
     })
 
 
-        volume_parent.addEventListener("click", function(e){
+        volume_parent.addEventListener("mousedown", function(e){
             var x = e.pageX - $("#volume-full").offset().left
 
             if (x >=0 && x <= $("#volume-empty").width()){
                 $("#volume-full").width(x)
+            }
+
+            var percent = $("#volume-full").width() / $("#volume-empty").width()
+            if(player.src != null){
+            player.volume = percent
             }
         })
 
