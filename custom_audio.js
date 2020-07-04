@@ -77,11 +77,10 @@ var getNav = setInterval(function(){
             mouse_down_on_volume = true
         })
 
-        volume_empty.addEventListener("mouseup", function(e){
+        volume_parent.addEventListener("mouseup", function(e){
             mouse_down_on_volume = false
         })
         volume_parent.addEventListener("mouseleave", function(e){
-            mouse_down_on_volume = false
             if (is_muted){
                 volume_icon.style.backgroundImage = "url('img/volume_muted.png')"
 
