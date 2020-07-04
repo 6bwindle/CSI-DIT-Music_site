@@ -99,12 +99,15 @@ html{
 #volume-icon{
     background-image: url("img/volume.png");
     height:100%;
+    width:50%;
     background-repeat:no-repeat;
     background-size:contain;
 
 }
 
-
+#volume-icon:hover{
+    width:30%;
+}
 #now-playing{
     font-family: Arial, sans-serif;
     
