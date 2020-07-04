@@ -35,8 +35,98 @@ var getNav = setInterval(function(){
 
 
 
-
+        var mouse_down_on_volume = false
+        var is_muted = false
+        var prev_volume = 1
         clearInterval(getNav)
+        function moveVolume(e){
+            var x = e.pageX - $("#volume-full").offset().left
+
+            if (x >=0 && x <= $("#volume-empty").width()){
+                $("#volume-full").width(x)
+            }
+
+            var percent = $("#volume-full").width() / $("#volume-empty").width()
+                prev_volume = percent
+
+            if(player.src != null){
+            player.volume = percent
+            }
+            is_muted = false
+        }
+        var volume_empty = document.getElementById("volume-empty")
+        var volume_full = document.getElementById("volume-full")
+        var volume_parent = document.getElementById("volume-area")
+        var volume_icon = document.getElementById("volume-icon")
+
+        volume_parent.addEventListener("mouseenter", function(event){
+                volume_full.style.display = "block"
+                volume_empty.style.display = "block"
+                document.getElementById("volume-icon").style.backgroundImage = "url('img/empty_volume.png')"
+        })
+
+        volume_parent.addEventListener("mouseleave", function(event){
+            volume_full.style.display = "none"
+            volume_empty.style.display = "none"
+           
+    })
+
+
+        volume_empty.addEventListener("mousedown", function(e){
+           moveVolume(e)
+            mouse_down_on_volume = true
+        })
+
+        volume_empty.addEventListener("mouseup", function(e){
+            mouse_down_on_volume = false
+        })
+        volume_parent.addEventListener("mouseleave", function(e){
+            mouse_down_on_volume = false
+            if (is_muted){
+                volume_icon.style.backgroundImage = "url('img/volume_muted.png')"
+
+            }
+            else{
+                volume_icon.style.backgroundImage = "url('img/volume.png')"
+            }
+        })
+
+        volume_parent.addEventListener("mousemove", function(e){
+            if (mouse_down_on_volume){
+                moveVolume(e)
+            }
+        })
+
+
+
+
+
+
+
+        volume_icon.addEventListener("click", function(){
+            if (is_muted == true){
+                is_muted = false
+                player.volume = prev_volume
+                $("#volume-full").width($("#volume-empty").width() * player.volume)
+            }
+            else{
+                is_muted = true
+                volume = player.volume
+                player.volume = 0
+               
+                $("#volume-full").width(0)
+            }
+            
+        })
+
+
+
+
+
+
+
+
+
         seeker_large = document.getElementById("clickable-seeker-area")
         seeker_empty = document.getElementById("empty-seeker")
         seeker_full = document.getElementById("full-seeker")
