@@ -35,9 +35,20 @@ var getNav = setInterval(function(){
 
 
 
-
+        var mouse_down_on_volume = false
         clearInterval(getNav)
+        function moveVolume(e){
+            var x = e.pageX - $("#volume-full").offset().left
 
+            if (x >=0 && x <= $("#volume-empty").width()){
+                $("#volume-full").width(x)
+            }
+
+            var percent = $("#volume-full").width() / $("#volume-empty").width()
+            if(player.src != null){
+            player.volume = percent
+            }
+        }
         volume_empty = document.getElementById("volume-empty")
         volume_full = document.getElementById("volume-full")
         volume_parent = document.getElementById("volume-area")
@@ -56,15 +67,20 @@ var getNav = setInterval(function(){
 
 
         volume_parent.addEventListener("mousedown", function(e){
-            var x = e.pageX - $("#volume-full").offset().left
+           moveVolume(e)
+            mouse_down_on_volume = true
+        })
 
-            if (x >=0 && x <= $("#volume-empty").width()){
-                $("#volume-full").width(x)
-            }
+        volume_parent.addEventListener("mouseup", function(e){
+            mouse_down_on_volume = false
+        })
+        volume_parent.addEventListener("mouseleave", function(e){
+            mouse_down_on_volume = false
+        })
 
-            var percent = $("#volume-full").width() / $("#volume-empty").width()
-            if(player.src != null){
-            player.volume = percent
+        volume_parent.addEventListener("mousemove", function(e){
+            if (mouse_down_on_volume){
+                moveVolume(e)
             }
         })
 
