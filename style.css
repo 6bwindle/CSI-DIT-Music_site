@@ -107,6 +107,7 @@ html{
 
 #volume-icon:hover{
     width:30%;
+    cursor: pointer;
 }
 #now-playing{
     font-family: Arial, sans-serif;
@@ -200,6 +201,10 @@ html{
     left:25%;
     background-color:#FaF;
     top:37.5%;
+}
+
+#volume-empty:hover{
+    cursor:pointer;
 }
 
 #volume-full{

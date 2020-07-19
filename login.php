@@ -15,13 +15,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $post_uname = mysqli_real_escape_string($usercon, $_POST['uname']);
     $post_pwd = mysqli_real_escape_string($usercon, $_POST['pwd']);
 
-    $result = mysqli_query($usercon, "SELECT password, id, uname FROM users WHERE uname = '$post_uname'");
+    $result = mysqli_query($usercon, "SELECT password, id, uname, user_rights FROM users WHERE uname = '$post_uname'");
     $row = mysqli_fetch_array($result);
     if ((mysqli_num_rows($result)) == 1){
         if (password_verify($post_pwd, $row['password'])){
 
             $_SESSION['user_id'] = $row["id"];
             $_SESSION["username"] = $row["uname"];
+            $_SESSION['rights'] = $row["user_rights"];
             #header("location: index.php");
     }
     else{
