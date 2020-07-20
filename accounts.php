@@ -14,30 +14,17 @@
             if(session_id() == '') {
                 session_start();
             }
+
+            if(!isset($_SESSION["user_id"]) || $_SESSION["rights"] != 1){
+                header("location:index.php");
+            }
         ?>
-        <div id="login-dialogue">
-        <div id="login-loader">
-            <img src="img/loading_background.png">
-            <img src="img/loading_foreground.png">
-        </div>
-                <div id="login-box">
-                    <form id="login-form">
-                    <div id="login-img">
-                    </div>
-                    <div class = "label-and-input">
-                        <label for ="uname"> Username: </label>
-                        <input type="text" id="uname" name="uname" class="login-input">
-                    </div>
-                    <div class="label-and-input">
-                        <label for ="pwd"> Password: </label>
-                        <input type="password" id="pwd" name="pwd" class="login-input">
-                    </div>
-                        <input id="login-button" type="submit" value="Log In">
-                    </form>
-                    
-                        
-                </div>
-            </div>
+        
+
+
+        
+        
+
         <div id="container">
 
             
@@ -58,13 +45,14 @@
                         <h2>Admin</h2>
                     </div>
                 </div>
+                <div id="acc-info-container">
                 <?php
                 require_once("return_users.php")
                 ?>
+                </div>
+                
         </div>
     </body>
-    <script src="sort.js"></script>
-        <script src="custom_audio.js"> </script>
         <script src="log-in-js.js"> </script>
         <script src="move_down.js"> </script>    
 </html>

@@ -760,14 +760,59 @@ display:none;
     width:100%;
     background-color: var(--main-colour);
     margin:0;
-    position:absolute;
-    top:0;
     display:grid;
-    grid-template-columns: 40% 40% 20%;
+    grid-template-columns: 30% 30%;
 }
 
 .acc-heading h2{
     padding-left:10%;
     width:100%;
     color:#ffffff;
+}
+
+.acc-parent{
+    display:grid;
+    grid-template-columns: 30% 30% 20% 20%;
+}
+.acc-child p{
+    font-size:1em;
+    padding:2.5% 0 2.5% 10%;
+    height:50%;
+    margin-top:2.5%;
+}
+
+.temp-button{
+    height:60%;
+    width:80%;
+    margin-top:5%;
+}
+
+.acc-parent:nth-child(odd){
+    background-color:var(--light-colour1);
+}
+
+.temp-button:hover{
+    background-color:var(--main-colour);
+    cursor:pointer;
+}
+
+.temp-button:hover p{
+    color:#ffffff;
+}
+
+.temp-button p{
+    width:100%;
+    text-align:center;
+    height:50%;
+    margin-top:5%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#add-user:hover{
+background-color:var(--main-colour);
+color:#FFFFFF;
+cursor:pointer;
 }

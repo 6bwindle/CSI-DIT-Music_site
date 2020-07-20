@@ -11,7 +11,28 @@ if (mysqli_connect_errno()){
 $query = "SELECT uname, user_rights FROM users";
 $result = mysqli_query($usercon, $query);
 while($output = mysqli_fetch_array($result)){
-    echo $output["uname"];
-    echo $output["user_rights"];
+    ?>
+    <div class="acc-parent">
+    <div class="acc-child">
+<p><?php  echo $output["uname"]; ?></p>
+    </div>
+
+    <div class="acc-child">
+<p><?php  echo ($output["user_rights"] == 1 ? "True" : "False"); ?></p>
+    </div>
+    <div class="temp-button">
+    <p> Change Password</p>
+</div>
+<div class="temp-button">
+<p>Delete Account</p>
+</div>
+    </div>
+
+    <?php
 }
 ?>
+<div class="acc-parent" id="add-user">
+<div class="acc-child" id="add-user-button">
+<p>Add a user...</p>
+</div>
+</div>
