@@ -44,6 +44,7 @@
                     }
                 else{
                 ?>
+            
                 <div id="username">
                     <p> Welcome, <?php echo ucwords($_SESSION['username']); ?> </p>
                 </div>
