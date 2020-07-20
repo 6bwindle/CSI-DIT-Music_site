@@ -48,10 +48,24 @@
                 <div id="username">
                     <p> Welcome, <?php echo ucwords($_SESSION['username']); ?> </p>
                 </div>
+                <?php if($_SESSION['rights'] == 1){
+                    ?>
+                    <div id="account-dropdown">
+                        <div id="log-out">
+                        <p>Logout</p>
+                        </div>
+                    </div>
+                <?php
+            }
+            else{
+            ?>
+                
                 <div id="log-out">
                     <p>Log Out</p>
                 </div> 
+
                 <?php
+                }
                     }
                 ?>
             </div>
