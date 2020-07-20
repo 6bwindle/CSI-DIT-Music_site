@@ -1,3 +1,10 @@
+:root{
+    --main-colour: #da38ec;
+    --light-colour1:#fdf;
+    --light-colour2:#faf;
+    --dark-colour:#1a002e;
+}
+
 #container{
     width:100%;
     height:100%;
@@ -10,12 +17,13 @@ body{
     width:100%;
     height:200%;
     margin:0;
-    background-color:#1a002e;
+    background-color:var(--dark-colour);
 }
 
 html{
     width:100%;
     height:100%;
+
 }
 
 
@@ -47,7 +55,7 @@ html{
     height:7.5%;
     position:absolute;
     top:100%;
-    background-color: #FaF;
+    background-color: var(--light-colour2);
     display:inline-block;
 }
 
@@ -86,7 +94,7 @@ html{
     left: 5%;
     top:12.5%;
     border-radius: 10px;
-    background-color:#da38ec;
+    background-color:var(--main-colour);
 }
 
 #volume-area{
@@ -133,7 +141,7 @@ html{
 }
 
 #now-playing p:first-child{
-    background-color:#da38ec;
+    background-color:var(--main-colour);
     z-index: 40;
     left:0;
 }
@@ -169,7 +177,7 @@ html{
     height:25%;
     position:absolute;
     width:100%;
-    background-color:#FaF;
+    background-color:var(--light-colour2);
     top:37.5%;
 }
 
@@ -200,7 +208,7 @@ html{
     position:absolute;
     width:55%;
     left:25%;
-    background-color:#FaF;
+    background-color:var(--light-colour2);
     top:37.5%;
 }
 
@@ -238,7 +246,7 @@ h2{
 }
 
 .grid-parent:nth-child(odd){
-    background-color: #fdf;
+    background-color: var(--light-colour1);
 }
 
 .grid-child{
@@ -260,7 +268,7 @@ h2{
 }
 
 #table-heading{
-    background-color: #da38ec;
+    background-color: var(--main-colour);
     
 }
 
@@ -283,7 +291,7 @@ h2{
     position: absolute;
     top:0;
     left:0;
-    background-color:#da38ec;
+    background-color:var(--main-colour);
     width:100%;
     display:none;
 
@@ -322,7 +330,7 @@ h2{
     width:90%;
     height:50%;
     padding:0;
-    border:2px solid #fdf;
+    border:2px solid var(--light-colour1);
     position:absolute;
     left:5%;
     top:22.5%;
@@ -332,7 +340,7 @@ h2{
 #search-form input:focus{
     height:50%;
     padding:0;
-    border: 2px solid #FaF;
+    border: 2px solid var(--light-colour2);
     outline:none;
 }
 
@@ -422,7 +430,7 @@ display:none;
     color:red;
 }
 #scrollable-data::-webkit-scrollbar{
-    background-color:#fdf;
+    background-color:var(--light-colour1);
 }
 
 #scrollable-data::-webkit-scrollbar-thumb{
@@ -451,7 +459,7 @@ display:none;
 }
 
 #log-in:hover{
-    background-color:#da38ec;
+    background-color:var(--main-colour);
     cursor:pointer;
     color:white;
 }
@@ -475,7 +483,7 @@ display:none;
 }
 
 #log-out:hover{
-    background-color:#da38ec;
+    background-color:var(--main-colour);
     cursor:pointer;
     color:white;
 }
@@ -512,7 +520,7 @@ display:none;
 #dropdown-items{
     display:none;
     position:absolute;
-    background-color: #FaF;
+    background-color: var(--light-colour2);
     width:100%;
     top:0;
     height:100%;
@@ -523,11 +531,14 @@ display:none;
     margin:0;
     position: absolute;
     width:100%;
+    color:#000000;
     
 }
 
 #dropdown-items a p{
-    height:100%;
+    height:50%;
+    position:absolute;
+    top:25%;
 }
 
 #dropdown-items a:nth-child(1){
@@ -538,7 +549,7 @@ display:none;
 }
 
 #dropdown-items a:hover{
-    background-color:#da38ec;
+    background-color:var(--main-colour);
     color:#ffffff;
 }
 
@@ -575,6 +586,7 @@ display:none;
     top:0;
     z-index:10;
     display:none;
+    backdrop-filter:blur(10px);
 }
 
 #login-box{
@@ -694,21 +706,21 @@ display:none;
     outline: 0px;
     border:none;
     border-radius:2px;
-    background-color: #fdf;
+    background-color: var(--light-colour1);
 }
 
 #login-button:hover{
-    background-color: #FaF;
+    background-color: var(--light-colour2);
 }
 
 #login-form input:focus{
-    outline: 2px solid #da38ec;
+    outline: 2px solid var(--main-colour);
 }
 
 
 
 #login-button:active{
-    background-color: #da38ec;
+    background-color: var(--main-colour);
     color:#FFFFFF;
 }
 
@@ -740,4 +752,22 @@ display:none;
     text-align:center;
     height:50%;
     margin-top:0%;
+}
+
+/*Account Page Stuff*/
+
+#acc-table-headings{
+    width:100%;
+    background-color: var(--main-colour);
+    margin:0;
+    position:absolute;
+    top:0;
+    display:grid;
+    grid-template-columns: 40% 40% 20%;
+}
+
+.acc-heading h2{
+    padding-left:10%;
+    width:100%;
+    color:#ffffff;
 }
