@@ -51,8 +51,14 @@
                 <?php if($_SESSION['rights'] == 1){
                     ?>
                     <div id="account-dropdown">
-                        <div id="log-out">
-                        <p>Logout</p>
+                    <p>Account<p/>
+                    <div id="dropdown-items"> 
+                        <a href = "accounts.php" id="account-button">
+                        <p>Admin Controls</p>
+                        </a>
+                        <a href="logout.php">
+                        <p>Log out</p>
+                        </a>
                         </div>
                     </div>
                 <?php
@@ -60,9 +66,9 @@
             else{
             ?>
                 
-                <div id="log-out">
+                <a id="log-out" href="logout.php">
                     <p>Log Out</p>
-                </div> 
+                </a> 
 
                 <?php
                 }
