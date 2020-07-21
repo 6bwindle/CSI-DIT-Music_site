@@ -27,6 +27,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             echo "Error. Account already exists";
             
         }
+        else if(strlen($_POST["uname"]) > 25){
+            echo "Error: Username is too long";
+        }
         else{
 
             $hashed_password = password_hash($password, 1);
