@@ -34,6 +34,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             mysqli_query($usercon, $alter_query);
         }
         }
+    else if($_POST["type"] = "1"){
+        //do things
+    }
 
 }
 
