@@ -12,27 +12,27 @@ if(session_id() == '') {
     session_start();
 }
 
-function createUser($username, $password, $admin){
-    $check_username_query = "SELECT id FROM  users where username = '$username'";
-    $result = mysqli_query($usercon, $check_username_query);
-    $row = mysqli_fetch_array($result);
-    $rights = intval($admin);
-    if (mysqli_num_rows($row) != 0){
-        echo "Error. Account already exists";
-        return;
-    }
-
-    $hashed_password = password_hash($password, 1);
-    $alter_query = "INSERT INTO users (uname, password, user_rights) VALUES ('$username', '$hashed_password', $rights)";
-    return;
-
-}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
-    if ($_POST["type"] == 0){
-        createUser($_POST["uname"], $_POST["pwd"], $_POST["admin"]);
-    }
+    if ($_POST["type"] == '0'){
+        $username = $_POST["uname"];
+        $password =  $_POST["pwd"];
+        $admin = $_POST["admin"];
+        $check_username_query = "SELECT id FROM  users where username = '$username'";
+        $result = mysqli_query($usercon, $check_username_query);
+        $row = mysqli_fetch_array($result);
+        $rights = intval($admin);
+        if (mysqli_num_rows($row) != 0){
+            echo "Error. Account already exists";
+            
+        }
+        else{
+
+            $hashed_password = password_hash($password, 1);
+            $alter_query = "INSERT INTO users (uname, password, user_rights) VALUES ('$username', '$hashed_password', $rights)";
+        }
+        }
 
 }
 

@@ -40,7 +40,7 @@ $(function(){
         $.ajax({
             type: "POST",
             url: "alter_users.php",
-            data : {uname : username, pwd: password1, admin: admin_rights},
+            data : {uname : username, pwd: password1, admin: admin_rights, type: 0},
             success: function(data){
                 if (data == ""){
                     alert("user should have been added")
@@ -48,7 +48,7 @@ $(function(){
                 else{
                     $("#user-loader").hide()
                     $("#add-user-form").append("<div id='error-label'><p>" +data + "</p></div>")
-            setTimeout(() =>{removeErrorlabel()}, 1000)
+            setTimeout(() =>{removeErrorlabel()}, 10000)
                 }
             }
         })
