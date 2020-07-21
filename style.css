@@ -781,7 +781,7 @@ display:none;
     margin-top:2.5%;
 }
 
-.temp-button{
+.acc-button{
     height:60%;
     width:80%;
     margin-top:5%;
@@ -791,16 +791,16 @@ display:none;
     background-color:var(--light-colour1);
 }
 
-.temp-button:hover{
+.acc-button:hover{
     background-color:var(--main-colour);
     cursor:pointer;
 }
 
-.temp-button:hover p{
+.acc-button:hover p{
     color:#ffffff;
 }
 
-.temp-button p{
+.acc-button p{
     width:100%;
     text-align:center;
     height:50%;

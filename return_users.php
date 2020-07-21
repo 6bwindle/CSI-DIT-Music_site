@@ -8,7 +8,7 @@ if (mysqli_connect_errno()){
     echo mysqli_connect_errno();
 }
 
-$query = "SELECT uname, user_rights FROM users";
+$query = "SELECT uname, user_rights, id FROM users";
 $result = mysqli_query($usercon, $query);
 while($output = mysqli_fetch_array($result)){
     ?>
@@ -20,10 +20,10 @@ while($output = mysqli_fetch_array($result)){
     <div class="acc-child">
 <p><?php  echo ($output["user_rights"] == 1 ? "True" : "False"); ?></p>
     </div>
-    <div class="temp-button">
+    <div class="acc-button">
     <p> Change Password</p>
 </div>
-<div class="temp-button">
+<div class="acc-button delete-button" data-id="<?php  echo $output["id"];?>">
 <p>Delete Account</p>
 </div>
     </div>

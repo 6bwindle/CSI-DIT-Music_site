@@ -35,18 +35,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         }
         }
     else if($_POST["type"] = "1"){
-        //do things
+        if ($_POST["id"] == $_SESSION["user_id"]){
+            echo "Error: You cannot delete your own account";
+        }
+        else{
+
+        
+        $id_to_delete = $_POST["id"];
+
+        $delete_query = "DELETE FROM users WHERE id = $id_to_delete";
+        mysqli_query($usercon, $delete_query);
+        $reset_id_query = "SET @num := 0;UPDATE users SET id = @num := (@num + 1);ALTER TABLE users AUTO_INCREMENT = 1";
+        mysqli_query($usercon, $reset_id_query);
+        }
     }
 
 }
 
 
 
-//SET @num := 0;
-
-//UPDATE users SET id = @num := (@num + 1);
-
-//ALTER TABLE users AUTO_INCREMENT = 1
-//CODE FOR RESETING THE AUTO INCREMENT IDS IN THE USERS TABLE.
 
 ?>

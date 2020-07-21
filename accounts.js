@@ -58,3 +58,22 @@ $(function(){
         })
     })
 })
+
+
+$(document).on("click", ".delete-button", function(){
+    var delete_id = $(this).data("id");
+    $.ajax({
+        type: "POST",
+        url: "alter_users.php",
+        data: {id: delete_id, type:1},
+        success: function(data){
+            if (data != ""){
+                alert(data)
+            }
+            else{
+                alert("account deleted")
+                window.location.reload()
+            }
+        }
+    })
+})
