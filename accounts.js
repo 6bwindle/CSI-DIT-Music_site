@@ -15,7 +15,7 @@ $(function(){
         e.preventDefault();
         var password1 = $("#acc-pwd").val()
         var password2 = $("#acc-con-pwd").val()
-        var uname = $("#acc-uname").val().strip()
+        var uname = $("#acc-uname").val().trim()
         var admin_rights = (document.getElementById("admin-input").checked ? 1 : 0)
         if (password1 != password2){
             alert("bitch")
