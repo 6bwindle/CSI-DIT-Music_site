@@ -6,7 +6,7 @@
 <div id="nav">
                 <a class="nav-element"><img id="home-icon" src="img/home_icon_white.png"></a>
                 <?php
-                    if (isset($_SESSION["user_id"]) && $_SERVER[REQUEST_URI] != "/music-git/accounts.php"){
+                    if (isset($_SESSION["user_id"]) && $_SERVER['REQUEST_URI'] != "/music-git/accounts.php"){
 
                 ?>
                 <audio id="audio-player"></audio>
