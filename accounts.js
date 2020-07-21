@@ -8,6 +8,10 @@ document.getElementById("add-user-button").addEventListener("click", function(){
 
 document.getElementById("form-background").addEventListener("click", function(){
     document.getElementById("form-background").style.display = "none"
+    $("#acc-pwd").val("")
+    $("#acc-con-pwd").val("")
+    $("#acc-uname").val("")
+    document.getElementById("admin-input").checked = false 
 })
 
 function removeErrorlabel(){
@@ -43,12 +47,12 @@ $(function(){
             data : {uname : username, pwd: password1, admin: admin_rights, type: 0},
             success: function(data){
                 if (data == ""){
-                    alert("user should have been added")
+                    window.location.reload()
                 }
                 else{
                     $("#user-loader").hide()
                     $("#add-user-form").append("<div id='error-label'><p>" +data + "</p></div>")
-            setTimeout(() =>{removeErrorlabel()}, 10000)
+            setTimeout(() =>{removeErrorlabel()}, 1000)
                 }
             }
         })

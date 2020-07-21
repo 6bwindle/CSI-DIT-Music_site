@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $result = mysqli_query($usercon, $check_username_query);
         $row = mysqli_fetch_array($result);
         $rights = intval($admin);
-        if (mysqli_num_rows($row) != 0){
+        if (mysqli_num_rows($result) != 0){
             echo "Error. Account already exists";
             
         }
@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
             $hashed_password = password_hash($password, 1);
             $alter_query = "INSERT INTO users (uname, password, user_rights) VALUES ('$username', '$hashed_password', $rights)";
+            mysqli_query($usercon, $alter_query);
         }
         }
 
