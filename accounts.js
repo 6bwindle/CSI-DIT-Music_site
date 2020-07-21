@@ -1,9 +1,18 @@
+delete_id = null
+
+document.getElementById("confirm-delete-container").addEventListener("click", function(e){
+    e.stopPropagation()
+})
+
 document.getElementById("add-user-container").addEventListener("click", function(e){
     e.stopPropagation()
 })
 
-document.getElementById("add-user-button").addEventListener("click", function(){
+document.getElementById("add-user").addEventListener("click", function(){
     document.getElementById("form-background").style.display = "block";
+    $("#form-background").children().hide()
+    $("#add-user-container").show()
+    $("html").css("overflow", "hidden")
 })
 
 document.getElementById("form-background").addEventListener("click", function(){
@@ -11,13 +20,22 @@ document.getElementById("form-background").addEventListener("click", function(){
     $("#acc-pwd").val("")
     $("#acc-con-pwd").val("")
     $("#acc-uname").val("")
-    document.getElementById("admin-input").checked = false 
+    $("html").css("overflow", "scroll")
+        document.getElementById("admin-input").checked = false 
 })
 
 function removeErrorlabel(){
     $("#error-label").fadeOut();
     setTimeout(() =>{$("#error-label").remove()}, 400)
 }
+
+
+document.getElementById("no").addEventListener("click", function(){
+    
+    $("#form-background").hide()
+    $("html").css("overflow",  "scroll")
+    delete_id = null
+})
 
 
 $(function(){
@@ -56,5 +74,40 @@ $(function(){
                 }
             }
         })
+    })
+})
+
+
+$(document).on("click", ".delete-button", function(){
+   delete_id = $(this).data("id")
+   $("#form-background").children().hide()
+   $("html").css("overflow", "hidden")
+   $("#confirm-delete-container").show()
+   $("#form-background").show()
+   $("#confirm-text p").html("Are you sure you want to delete the account: " + $(this).data("name") + "?" )
+
+
+})
+
+function hideBigError(){
+    $("#big-error").fadeOut();
+    setTimeout(() =>{$("#big-error").hide()}, 400)
+}
+
+document.getElementById("yes").addEventListener("click", function(){
+    $.ajax({
+        type: "POST",
+        url: "alter_users.php",
+        data: {id: delete_id, type:1},
+        success: function(data){
+            if (data != ""){
+                $("#big-error p").html(data)
+                $("#big-error").show()
+                setTimeout(() => {hideBigError()}, 1000)
+            }
+            else{
+                window.location.reload()
+            }
+        }
     })
 })

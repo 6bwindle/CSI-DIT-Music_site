@@ -33,6 +33,24 @@
     </div>
 
 
+<div id="confirm-delete-container">
+    <div id="big-error">
+        <p>Error: You shouldn't be seeing this</p>
+    </div>
+    <div id="confirm-text">
+        <p>You shouldn't be able to see this</p>
+    </div>
+    <div class="yes-no">
+        <div class = "yes-no-button" id="yes">
+            <p>Delete user</p>
+        </div>
+        <div class="yes-no-button" id="no">
+            <p>Don't delete</p>
+        </div>
+    </div>
+</div>
+
+
 
 </div>
 
