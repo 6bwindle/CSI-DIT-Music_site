@@ -54,6 +54,7 @@
                 
         </div>
     </body>
-        <script src="log-in-js.js"> </script>
+        <script src="accounts.js"></script>
         <script src="move_down.js"> </script>    
+
 </html>

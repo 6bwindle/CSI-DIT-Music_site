@@ -690,7 +690,7 @@ display:none;
 }
 
 
-#login-form .label-and-input{
+.label-and-input{
     padding:5%;
     display:grid;
 /*    grid-template-columns: 30% 70%;*/
@@ -713,7 +713,7 @@ display:none;
     background-color: var(--light-colour2);
 }
 
-#login-form input:focus{
+#login-form input:focus, #add-user-form .new-user-input:focus{
     outline: 2px solid var(--main-colour);
 }
 
@@ -819,6 +819,7 @@ cursor:pointer;
 
 
 #form-background{
+    display:none;
     height:100%;
     width:100%;
     position:fixed;
@@ -831,17 +832,23 @@ cursor:pointer;
     background-color:#ffffff;
     position: fixed;
     width:25%;
-    height:30%;
-    top:35%;
+    height:50%;
+    top:25%;
     left:37.5%;
 }
 #add-user-form{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
     height:100%;
     margin:0;
+    display:grid;
+    grid-template-rows: 15% 15% 15% 15% 15% 10%;
 }
 .form-title{
     background-color:var(--main-colour);
-    height:15%;
+    height:100%;
     width:100%;
 }
 
@@ -849,8 +856,89 @@ cursor:pointer;
     color:#FFFFFF;
     margin:0;
     height:75%;
-    padding-top:1.5%;
+    padding-top:4%;
     font-size:1.5em;
     width:100%;
     text-align:center;
+}
+
+
+
+#create-user-button{
+    width:40%;
+    margin-left:30%;
+    height:100%;
+    outline: 0px;
+    margin-top:3%;
+    border:none;
+    border-radius:2px;
+    background-color: var(--light-colour1);
+}
+
+#create-user-button:hover{
+    background-color: var(--light-colour2);
+}
+
+#create-user-button:active{
+    background-color: var(--main-colour);
+    color:#FFFFFF;
+}
+
+#create-user-button:focus{
+    outline:none;
+}
+
+#add-user-form .label-and-input{
+    display:grid;
+    grid-template-rows: 25% 40%;
+}
+
+.check-and-label label{
+    font-family: Arial, sans-serif;
+    width:20%;
+
+}
+.check-and-label input{
+    width:5%;
+}
+.check-and-label{
+    width:100%;
+    padding-top:5%;
+    padding-left:5%;
+}
+
+#user-loader{
+    display:none;
+    z-index:30;
+    background-color:rgba(0,0,0,0.75);
+    position:sticky;
+    margin:0;
+    top:50%;
+    left:50%;
+    width:100%;
+    height:100%;
+    
+}
+
+#user-loader img {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+
+}
+
+#user-loader img:first-child{
+    width:20%;
+    animation: spin 2s linear infinite;
+    top:50%;
+    left:50%;
+    margin-top:-10%;
+    margin-left:-10%;
+}
+
+
+
+#user-loader img:last-child{
+    width:10%;
 }
