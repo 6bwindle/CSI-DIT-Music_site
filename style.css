@@ -816,3 +816,41 @@ background-color:var(--main-colour);
 color:#FFFFFF;
 cursor:pointer;
 }
+
+
+#form-background{
+    height:100%;
+    width:100%;
+    position:fixed;
+    background-color: rgba(0,0,0,0.75);
+    top:0;
+    z-index:100;
+    backdrop-filter: blur(10px);
+}
+#add-user-container{
+    background-color:#ffffff;
+    position: fixed;
+    width:25%;
+    height:30%;
+    top:35%;
+    left:37.5%;
+}
+#add-user-form{
+    height:100%;
+    margin:0;
+}
+.form-title{
+    background-color:var(--main-colour);
+    height:15%;
+    width:100%;
+}
+
+.form-title h2{
+    color:#FFFFFF;
+    margin:0;
+    height:75%;
+    padding-top:1.5%;
+    font-size:1.5em;
+    width:100%;
+    text-align:center;
+}

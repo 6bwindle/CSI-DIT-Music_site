@@ -18,6 +18,7 @@
             if(!isset($_SESSION["user_id"]) || $_SESSION["rights"] != 1){
                 header("location:index.php");
             }
+            require_once("user_forms.php")
         ?>
         
 
