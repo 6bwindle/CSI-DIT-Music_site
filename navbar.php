@@ -4,7 +4,7 @@
     }
 ?>
 <div id="nav">
-                <a class="nav-element"><img id="home-icon" src="img/home_icon_white.png"></a>
+                <a class="nav-element" href="index.php"><img id="home-icon" src="img/home_icon_white.png"></a>
                 <?php
                     if (isset($_SESSION["user_id"]) && $_SERVER['REQUEST_URI'] != "/music-git/accounts.php"){
 
