@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 19, 2020 at 05:55 AM
+-- Generation Time: Jul 21, 2020 at 08:35 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `users` (
   `id` smallint(2) NOT NULL,
-  `uname` varchar(25) NOT NULL,
+  `uname` varchar(25) CHARACTER SET latin1 COLLATE latin1_general_cs NOT NULL,
   `password` char(60) NOT NULL,
   `user_rights` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -39,7 +39,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `uname`, `password`, `user_rights`) VALUES
-(1, 'admin', '$2y$10$RpYHgukJLGMOURkGL0Huou3TjU7LDbT7AY1S1zptO5buRH.ZzzNO2', 1);
+(1, 'Admin', '$2y$10$RpYHgukJLGMOURkGL0Huou3TjU7LDbT7AY1S1zptO5buRH.ZzzNO2', 1);
 
 --
 -- Indexes for dumped tables
