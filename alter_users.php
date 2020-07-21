@@ -45,7 +45,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
         $delete_query = "DELETE FROM users WHERE id = $id_to_delete";
         mysqli_query($usercon, $delete_query);
-        $reset_id_query = "SET @num := 0;UPDATE users SET id = @num := (@num + 1);ALTER TABLE users AUTO_INCREMENT = 1";
+        $reset_id_query = "SET @num := 0;";
+        mysqli_query($usercon, $reset_id_query);
+        $reset_id_query = "UPDATE users SET id = @num := (@num + 1);";
+        mysqli_query($usercon, $reset_id_query);
+        $reset_id_query = "ALTER TABLE users AUTO_INCREMENT = 1";
         mysqli_query($usercon, $reset_id_query);
         }
     }

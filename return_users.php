@@ -23,7 +23,7 @@ while($output = mysqli_fetch_array($result)){
     <div class="acc-button">
     <p> Change Password</p>
 </div>
-<div class="acc-button delete-button" data-id="<?php  echo $output["id"];?>">
+<div class="acc-button delete-button" data-id="<?php  echo $output["id"];?>" data-name = "<?php echo $output["uname"] ?>">
 <p>Delete Account</p>
 </div>
     </div>
