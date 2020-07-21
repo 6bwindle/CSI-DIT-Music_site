@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $username = $_POST["uname"];
         $password =  $_POST["pwd"];
         $admin = $_POST["admin"];
-        $check_username_query = "SELECT id FROM  users where username = '$username'";
+        $check_username_query = "SELECT id FROM  users where uname = '$username'";
         $result = mysqli_query($usercon, $check_username_query);
         $row = mysqli_fetch_array($result);
         $rights = intval($admin);
