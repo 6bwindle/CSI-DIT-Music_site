@@ -95,6 +95,7 @@ function hideBigError(){
 }
 
 document.getElementById("yes").addEventListener("click", function(){
+    if (delete_id != null){
     $.ajax({
         type: "POST",
         url: "alter_users.php",
@@ -109,5 +110,5 @@ document.getElementById("yes").addEventListener("click", function(){
                 window.location.reload()
             }
         }
-    })
+    })}
 })
