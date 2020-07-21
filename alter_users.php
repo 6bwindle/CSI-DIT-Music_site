@@ -36,4 +36,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
 }
 
+
+
+//SET @num := 0;
+
+//UPDATE users SET id = @num := (@num + 1);
+
+//ALTER TABLE users AUTO_INCREMENT = 1
+//CODE FOR RESETING THE AUTO INCREMENT IDS IN THE USERS TABLE.
+
 ?>
