@@ -139,7 +139,7 @@ $(function(){
         
         e.preventDefault();
         $("#error-label").remove()
-        if (change_pwd_id = null){
+        if (change_pwd_id == null){
             $("#change-password-form").append("<div id='error-label'><p> Error: What have you done? </p></div>")
             setTimeout(() =>{removeErrorlabel()}, 1000)
         }
@@ -160,10 +160,10 @@ $(function(){
             $("#change-loader").show()
             $.ajax({
                 type:"POST",
-                url: "alter_users".php,
-                data: {id: change_pwd_id, pwd : password1},
+                url: "alter_users.php",
+                data: {id: change_pwd_id, pwd : password1, type:2},
                 success: function(data){
-                    if (data != null){
+                    if (data != ""){
                         
                         $("#change-password-form").append("<p id='error-label'> " + data + " </p>")
                         setTimeout(() =>{removeErrorlabel()}, 1000)
