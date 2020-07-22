@@ -56,6 +56,18 @@
 <div class="form-title">
 <h2>You shouldn't be able to see this</h2>
 </div>
+<div class="label-and-input">
+<label for="change-pwd">New password</label>
+<input name="change-pwd" type="password" id="change-pwd-input" class="new-pwd-input">
+</div>
+<div class="label-and-input">
+<label for="con-change-pwd">Confirm password</label>
+<input name="con-change-pwd" type="password" id="con-change-pwd-input" class="new-pwd-input">
+</div>
+<div>
+            
+            <input type="submit" value="Change password" id="change-password-button">
+            </div>
 </form>
 </div>
 

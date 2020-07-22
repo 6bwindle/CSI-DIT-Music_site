@@ -8,6 +8,10 @@ document.getElementById("add-user-container").addEventListener("click", function
     e.stopPropagation()
 })
 
+document.getElementById("change-password-container").addEventListener("click", function(e){
+    e.stopPropagation()
+})
+
 document.getElementById("add-user").addEventListener("click", function(){
     document.getElementById("form-background").style.display = "block";
     $("#form-background").children().hide()
