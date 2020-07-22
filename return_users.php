@@ -20,7 +20,7 @@ while($output = mysqli_fetch_array($result)){
     <div class="acc-child">
 <p><?php  echo ($output["user_rights"] == 1 ? "True" : "False"); ?></p>
     </div>
-    <div class="acc-button">
+    <div class="acc-button change-button" data-id="<?php  echo $output["id"];?>" data-name = "<?php echo $output["uname"] ?>">
     <p> Change Password</p>
 </div>
 <div class="acc-button delete-button" data-id="<?php  echo $output["id"];?>" data-name = "<?php echo $output["uname"] ?>">

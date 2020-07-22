@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             mysqli_query($usercon, $alter_query);
         }
         }
-    else if($_POST["type"] = "1"){
+    else if($_POST["type"] == "1"){
         if ($_POST["id"] == $_SESSION["user_id"]){
             echo "Error: You cannot delete your own account";
         }
@@ -55,6 +55,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $reset_id_query = "ALTER TABLE users AUTO_INCREMENT = 1";
         mysqli_query($usercon, $reset_id_query);
         }
+    }
+
+    else if($_POST["type"] == "2"){
+        $id_to_change = $_POST["id"];
+        $new_password = $_POST["pwd"];
+        $hashed_password = password_hash($new_password, 1);
+
+        $query = "UPDATE users SET password = '$hashed_password' WHERE id = $id_to_change";
+        mysqli_query($usercon, $query);
     }
 
 }

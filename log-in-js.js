@@ -23,9 +23,6 @@ $(document).on("click", "#log-out", function(){
 })
 
 
-$(document).on("click", "#home-icon", function(){
-    location.href = "index.php"
-})
 
 function removeErrorlabel(){
     $("#error-label").fadeOut();
