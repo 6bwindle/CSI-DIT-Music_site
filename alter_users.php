@@ -57,6 +57,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     }
 
+    else if($_POST["type"] == 2){
+        $id_to_change = $_POST["id"];
+        $new_password = $_POST["pwd"];
+        $hashed_password = password_hash($new_password, 1);
+
+        $query = "UPDATE users SET password = $hashed_password WHERE id = $id_to_change";
+        mysqli_query($usercon, $query);
+    }
+
 }
 
 

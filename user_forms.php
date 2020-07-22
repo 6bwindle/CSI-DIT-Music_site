@@ -1,7 +1,7 @@
 <div id="form-background">
 
     <div id="add-user-container">
-    <div id="user-loader">
+    <div class="user-loader" id="user-loader">
             <img src="img/loading_background.png">
             <img src="img/loading_foreground.png">
         </div>
@@ -34,6 +34,10 @@
 
 
 <div id="confirm-delete-container">
+<div class="user-loader" id="delete-loader">
+            <img src="img/loading_background.png">
+            <img src="img/loading_foreground.png">
+        </div>
     <div id="big-error">
         <p>Error: You shouldn't be seeing this</p>
     </div>
@@ -53,6 +57,10 @@
 
 <div id="change-password-container">
 <form id="change-password-form">
+<div class="user-loader" id="change-loader">
+            <img src="img/loading_background.png">
+            <img src="img/loading_foreground.png">
+        </div>
 <div class="form-title">
 <h2>You shouldn't be able to see this</h2>
 </div>

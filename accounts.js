@@ -25,7 +25,12 @@ document.getElementById("form-background").addEventListener("click", function(){
     $("#acc-con-pwd").val("")
     $("#acc-uname").val("")
     $("html").css("overflow", "scroll")
-        document.getElementById("admin-input").checked = false 
+    document.getElementById("admin-input").checked = false 
+    delete_id = null
+    change_pwd_id = null
+    $("#error-label").remove()
+    $("#change-pwd-input").val('')
+    $("#con-change-pwd-input").val('')
 })
 
 function removeErrorlabel(){
@@ -99,7 +104,9 @@ function hideBigError(){
 }
 
 document.getElementById("yes").addEventListener("click", function(){
+    $("#delete-loader").show()
     if (delete_id != null){
+        
     $.ajax({
         type: "POST",
         url: "alter_users.php",
@@ -108,6 +115,7 @@ document.getElementById("yes").addEventListener("click", function(){
             if (data != ""){
                 $("#big-error p").html(data)
                 $("#big-error").show()
+                $("#delete-loader").hide()
                 setTimeout(() => {hideBigError()}, 1000)
             }
             else{
@@ -125,3 +133,50 @@ $(document).on("click", ".change-button", function(){
     $("#change-password-container").show()
     $("#form-background").show()
 })
+
+$(function(){
+    $("#change-password-form").submit(function(e){
+        
+        e.preventDefault();
+        $("#error-label").remove()
+        if (change_pwd_id = null){
+            $("#change-password-form").append("<div id='error-label'><p> Error: What have you done? </p></div>")
+            setTimeout(() =>{removeErrorlabel()}, 1000)
+        }
+        else{
+
+        
+        var password1 = $("#change-pwd-input").val()
+        var password2 = $("#con-change-pwd-input").val()
+        if(password1 == ""){
+            $("#change-password-form").append("<div id='error-label'><p> Error: Please enter a password </p></div>")
+            setTimeout(() =>{removeErrorlabel()}, 1000)
+        }
+        else if(password1 != password2){
+            $("#change-password-form").append("<div id='error-label'><p> Error: Passwords do not match </p></div>")
+            setTimeout(() =>{removeErrorlabel()}, 1000)
+        }
+        else{
+            $("#change-loader").show()
+            $.ajax({
+                type:"POST",
+                url: "alter_users".php,
+                data: {id: change_pwd_id, pwd : password1},
+                success: function(data){
+                    if (data != null){
+                        
+                        $("#change-password-form").append("<p id='error-label'> " + data + " </p>")
+                        setTimeout(() =>{removeErrorlabel()}, 1000)
+                        $("#change-loader").hide()
+                    }
+                    else{
+                        window.location.reload()
+                    }
+                }
+            })
+        }
+    }
+    })
+})
+
+
