@@ -20,7 +20,7 @@
             <img src="img/loading_foreground.png">
         </div>
         <?php  
-        require_once("login-dialogue.php");
+        require_once("login_dialogue.php");
         ?>
         
         <div id="container">

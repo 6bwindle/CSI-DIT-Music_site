@@ -1,5 +1,5 @@
 delete_id = null
-
+change_pwd_id = null
 document.getElementById("confirm-delete-container").addEventListener("click", function(e){
     e.stopPropagation()
 })
@@ -111,4 +111,13 @@ document.getElementById("yes").addEventListener("click", function(){
             }
         }
     })}
+})
+
+$(document).on("click", ".change-button", function(){
+    change_pwd_id = $(this).data("id")
+    $("#change-password-form h2").html("Enter a new password for " + $(this).data("name"))
+    $("#form-background").children().hide()
+    $("html").css("overflow", "hidden")
+    $("#change-password-container").show()
+    $("#form-background").show()
 })

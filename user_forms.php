@@ -51,6 +51,15 @@
 </div>
 
 
+<div id="change-password-container">
+<form id="change-password-form">
+<div class="form-title">
+<h2>You shouldn't be able to see this</h2>
+</div>
+</form>
+</div>
+
+
 
 </div>
 
