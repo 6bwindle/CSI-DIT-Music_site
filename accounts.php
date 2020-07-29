@@ -30,7 +30,9 @@
 
             
 
-            <div id="banner">
+        <div id="banner">
+            <h1>Music Website</h1>
+            <video id="background-video" loop autoplay src="video/bg_video.webm"></video>
             <div id="scroll-button">&#9660; </div>
             </div>
             <?php

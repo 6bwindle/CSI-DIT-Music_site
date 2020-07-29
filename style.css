@@ -28,15 +28,38 @@ html{
 
 
 #banner{
-    background-image: url("img/temp_bg_text.png");
+    background-image: url("img/temp_bg.png");
     height:100%;
     width:100%;
-    background-size: cover;
+    background-size: 125%;
     position: absolute;
+    background-position: center;
     top:0;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 
+#background-video{
+    min-width:100%;
+    min-height:100%;
+    width:auto;
+    height:auto;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+#banner h1{
+    color:var(--dark-colour);
+    position: absolute;
+    font-family: Arial, sans-serif;
+    font-size: 3em;
+    top:30%;
+    left:50%;
+    transform: translate(-50%, 0);
+    z-index:100;
+}
 
 #scroll-button{
     color:#FFFFFF;
@@ -44,6 +67,7 @@ html{
     bottom:5%;
     left:50%;
     font-size:3em;
+    z-index:100;
 }
 
 #scroll-button:hover{
