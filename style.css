@@ -50,16 +50,6 @@ html{
     transform: translate(-50%, -50%);
 }
 
-#banner h1{
-    color:var(--dark-colour);
-    position: absolute;
-    font-family: Arial, sans-serif;
-    font-size: 3em;
-    top:30%;
-    left:50%;
-    transform: translate(-50%, 0);
-    z-index:100;
-}
 
 #scroll-button{
     color:#FFFFFF;

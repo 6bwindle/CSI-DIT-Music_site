@@ -28,8 +28,7 @@
             
 
             <div id="banner">
-            <h1>Music Website</h1>
-            <video id="background-video" loop autoplay muted src="video/bg_video.webm"></video>
+            <video id="background-video" loop autoplay muted src="video/bg.webm"></video>
             <div id="scroll-button">&#9660; </div>
             </div>
             <?php
