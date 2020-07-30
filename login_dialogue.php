@@ -9,11 +9,11 @@
                     </div>
                     <div class = "label-and-input">
                         <label for ="uname"> Username: </label>
-                        <input type="text" id="uname" name="uname" class="login-input">
+                        <input type="text" id="uname" name="uname" class="login-input" required>
                     </div>
                     <div class="label-and-input">
                         <label for ="pwd"> Password: </label>
-                        <input type="password" id="pwd" name="pwd" class="login-input">
+                        <input type="password" id="pwd" name="pwd" class="login-input" required>
                     </div>
                         <input id="login-button" type="submit" value="Log In">
                     </form>
