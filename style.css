@@ -399,7 +399,7 @@ h2{
 
 
 
-#table-container{
+#acc-table-container, #table-container{
     width:85%;
     height:88.5%;
     position:absolute;
@@ -407,6 +407,10 @@ h2{
     top: 109%;
     background-color: var(--light-colour2);
     /*transform:translate(-50%,0)*/
+}
+
+#acc-table-container{
+    background-color: #ffffff;
 }
 
 #copyright{

@@ -38,7 +38,7 @@
                 require_once("navbar.php");
             ?>
 
-            <div id = "table-container">
+            <div id = "acc-table-container">
                 <div id="acc-table-headings">
                     <div class="acc-child acc-heading"> 
                         <h2>Username</h2>
