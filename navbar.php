@@ -11,7 +11,7 @@
                 ?>
                 <audio id="audio-player"></audio>
                 <div id="audio-controls" class="nav-element">
-                    <div id = "control-play-button"onclick = "playMusic()"></div>
+                    <div id = "control-play-button"></div>
                     <div id="now-playing"><p></p><p></p></div>
                     <div id="clickable-seeker-area">
                     <div id="seeker-ball">
