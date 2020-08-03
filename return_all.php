@@ -1,4 +1,8 @@
 <?php
+if ($_SERVER["REQUEST_URI"] == "/music-git/return_all.php"){
+    header("location: index.php");
+}
+
 
 require_once("connect.php");
 $query = "SELECT song.pk, song.song_name, song.file_name, genre.genre, artist.artist FROM song INNER JOIN song_genre ON song.pk = song_genre.song_fk INNER JOIN genre ON genre.pk = song_genre.genre_fk INNER JOIN song_artist ON song.pk = song_artist.song_fk INNER JOIN artist ON artist.pk = song_artist.artist_fk ORDER BY song.pk ASC, genre.genre ASC";

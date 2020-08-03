@@ -1,3 +1,9 @@
+<?php
+if ($_SERVER["REQUEST_URI"] == "/music-git/user_forms.php"){
+    header("location: index.php");
+}
+?>
+
 <div id="form-background">
 
     <div id="add-user-container">

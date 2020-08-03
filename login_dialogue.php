@@ -1,3 +1,9 @@
+<?php
+if ($_SERVER["REQUEST_URI"] == "/music-git/login_dialogue.php"){
+    header("location: index.php");
+}
+?>
+
 <div id="login-dialogue">
         <div id="login-loader">
             <img src="img/loading_background.png">

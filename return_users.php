@@ -1,4 +1,8 @@
 <?php
+if ($_SERVER["REQUEST_URI"] == "/music-git/return_users.php"){
+    header("location: index.php");
+}
+
 $db = "users";
 $user = "website";
 $pwd = "dojustly01";

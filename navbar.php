@@ -1,4 +1,8 @@
 <?php
+if ($_SERVER["REQUEST_URI"] == "/music-git/navbar.php"){
+    header("location: index.php");
+}
+
     if(session_id() == '') {
         session_start();
     }
