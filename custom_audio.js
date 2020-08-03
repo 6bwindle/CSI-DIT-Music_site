@@ -217,7 +217,7 @@ var getNav = setInterval(function(){ //kinda rewrote the above but a little bit 
 
 
 
-$(document).on("click", "#control-play-button", function(){ //
+$(document).on("click", "#control-play-button", function(){ //plays and pauses the music
     var player = document.getElementById(playerID)
     if (player.paused){
         if (player.src !=""){
@@ -236,7 +236,7 @@ $(document).on("click", "#control-play-button", function(){ //
 })
 
 
-$(document).on("click", ".play-button", function(){
+$(document).on("click", ".play-button", function(){ //sets the song in the music player when on of the play buttons is clicked
     var music_path = $(this).parent().parent().data("filename")
     var music_name = $(this).parent().parent().data("title")
     document.getElementById(playerID).src = music_path

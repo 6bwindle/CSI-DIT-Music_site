@@ -71,9 +71,12 @@
                     require_once("return_all.php");
                     
                 ?>
+                
                 </div>
+                <p id="copyright"> &copy;Braeden Windle 2020</p>
+                <p id="total-time">  </p>
             </div>
-
+            
         </div>
     </body>
     <script src="sort.js"></script>
