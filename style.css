@@ -1,9 +1,7 @@
 :root{
     --main-colour: #da38ec;
-    --light-colour1:#fdf;
-    --light-colour2:#faf;
-    /*--dark-colour:#1a002e;*/
-    --dark-colour: #650573;
+    --light-colour1:#f3f3f3;
+    --light-colour2:#ddd;
 }
 
 #container{
