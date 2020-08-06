@@ -821,7 +821,7 @@ display:none;
 }
 
 .acc-button{
-    height:60%;
+    height:50%;
     width:80%;
     margin-top:5%;
 }
@@ -843,7 +843,7 @@ display:none;
     width:100%;
     text-align:center;
     height:50%;
-    margin-top:5%;
+    margin-top:2.5%;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
