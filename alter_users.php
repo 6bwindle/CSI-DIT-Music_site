@@ -1,7 +1,7 @@
 <?php
-if ($_SERVER["REQUEST_URI"] == "/music-git/alter_users.php"){
-    header("location: index.php");
-}
+
+    
+
 
 $db = "users";
 $user = "website";
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         }
         else{
 
-            $hashed_password = password_hash($password, 1);
+            $hashed_password = password_hash($password, PASSWORD_BCRYPT);
             $alter_query = "INSERT INTO users (uname, password, user_rights) VALUES ('$username', '$hashed_password', $rights)";
             mysqli_query($usercon, $alter_query);
         }
@@ -64,12 +64,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     else if($_POST["type"] == "2"){
         $id_to_change = $_POST["id"];
         $new_password = $_POST["pwd"];
-        $hashed_password = password_hash($new_password, 1);
+        $hashed_password = password_hash($new_password, PASSWORD_BCRYPT);
 
         $query = "UPDATE users SET password = '$hashed_password' WHERE id = $id_to_change";
         mysqli_query($usercon, $query);
     }
 
+}
+else{
+    header("location: index.php");
 }
 
 

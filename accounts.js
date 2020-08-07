@@ -76,7 +76,7 @@ $(function(){
             data : {uname : username, pwd: password1, admin: admin_rights, type: 0},
             success: function(data){
                 if (data == ""){ //if there were no errors reload the page so that the changes can be seen by the user
-                    window.location.reload()
+                    window.location.reload(false)
                 }
                 else{
                     $("#user-loader").hide() //hides the loader and creates the error label
@@ -121,7 +121,7 @@ document.getElementById("yes").addEventListener("click", function(){ //this func
                 setTimeout(() => {hideBigError()}, 1000)
             }
             else{
-                window.location.reload()
+                window.location.reload(false)
             }
         }
     })}
@@ -166,13 +166,13 @@ $(function(){
                 data: {id: change_pwd_id, pwd : password1, type:2},
                 success: function(data){
                     if (data != ""){
-                        
+
                         $("#change-password-form").append("<p id='error-label'> " + data + " </p>")
                         setTimeout(() =>{removeErrorlabel()}, 1000)
                         $("#change-loader").hide() //shows error, same as others
                     }
                     else{
-                        window.location.reload() //reloads the page, same as the other ajax calls
+                        window.location.reload(false) //reloads the page, same as the other ajax calls
                     }
                 }
             })
