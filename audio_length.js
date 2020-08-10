@@ -5,7 +5,7 @@ function delayedDuration(element_class, p_class){
     for (i=0; i < audio_elems.length; i++){
         
         var duration = audio_elems[i].duration;
-        total_duration += duration;
+        total_duration += Math.floor(duration);
         if (!(duration > 0)){
             setTimeout(() => {delayedDuration(element_class, p_class)}, 100);
             return;
