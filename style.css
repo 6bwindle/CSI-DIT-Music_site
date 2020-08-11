@@ -882,7 +882,7 @@ cursor:pointer;
     height:100%;
     margin:0;
     display:grid;
-    grid-template-rows: 15% 15% 15% 15% 15% 10%;
+    grid-template-rows: 15% 17.5% 17.5% 17.5% 15% 10%;
 }
 .form-title{
     background-color:var(--main-colour);
@@ -895,7 +895,7 @@ cursor:pointer;
     margin:0;
     height:75%;
     padding-top:4%;
-    font-size:1.25em;
+    font-size:1.5em;
     width:100%;
     text-align:center;
 }
