@@ -148,22 +148,16 @@ html{
 }
 
 #now-playing p{
-    font-size:.85em;
-    height:50%;
+    font-size:.75em;
+    height:100%;
     top: 37.5%;
     position:absolute;
     margin:0;
-}
-
-#now-playing p:first-child{
-    background-color:var(--main-colour);
-    z-index: 40;
     left:0;
+    width:100%;
+    z-index:40;
 }
 
-#now-playing p:last-child{
-    left:50%;
-}
 
 
 #control-play-button:hover{
