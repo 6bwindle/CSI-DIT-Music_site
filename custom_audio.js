@@ -224,12 +224,16 @@ $(document).on("click", "#control-play-button", function(){ //plays and pauses t
         if (player.src !=""){
             player.play()
             document.getElementById(playButtonID).style.backgroundImage = 'url("img/pause_icon.png")'
+            current_play_button.src="img/pause_purple.png"
           }
 
     }
     else{
         player.pause()
         document.getElementById(playButtonID).style.backgroundImage = 'url("img/arrow_white.png")'
+        if(current_play_button != null){
+            current_play_button.src="img/play_purple.png"
+        }
         
     }
     
@@ -238,19 +242,27 @@ $(document).on("click", "#control-play-button", function(){ //plays and pauses t
 
 
 $(document).on("click", ".play-button", function(){ //sets the song in the music player when on of the play buttons is clicked
-    var music_path = $(this).parent().parent().data("filename")
-    var music_name = $(this).parent().parent().data("title")
-    document.getElementById(playerID).src = music_path
-    document.getElementById("now-playing").children[0].innerHTML = "Now Playing: " + music_name
-    count = 0
-    var player = document.getElementById(playerID)
-    document.getElementById(playButtonID).style.backgroundImage = 'url("img/pause_icon.png")'
-    player.play()
-    if (current_play_button != null){
-        current_play_button.src = "play_purple.png"
+    if (this.src.includes("img/pause_purple.png")){
+        document.getElementById(playerID).pause()
+        this.src = "img/play_purple.png"
+        document.getElementById(playButtonID).style.backgroundImage = 'url("img/arrow_white.png")'
     }
-    current_play_button = this
-    this.src = "pause_purple.png"
+    else{
+        var music_path = $(this).parent().parent().data("filename")
+        var music_name = $(this).parent().parent().data("title")
+        document.getElementById(playerID).src = music_path
+        document.getElementById("now-playing").children[0].innerHTML = "Now Playing: " + music_name
+        count = 0
+        var player = document.getElementById(playerID)
+        document.getElementById(playButtonID).style.backgroundImage = 'url("img/pause_icon.png")'
+        player.play()
+        if (current_play_button != null){
+            current_play_button.src = "img/play_purple.png"
+        }
+        current_play_button = this
+        this.src = "img/pause_purple.png"  
+    }
+    
 
     
 })
