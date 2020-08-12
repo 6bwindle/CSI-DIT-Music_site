@@ -56,7 +56,7 @@ foreach ($results_array as $array_value){
                     <div class="grid-child">
                     <?php
                     if (isset($_SESSION["user_id"])){
-                        ?><img src="img/temp_arrow_purp.png" class="play-button">
+                        ?><div  class="play-button"> </div>
                     <?php
                     }
                     ?>

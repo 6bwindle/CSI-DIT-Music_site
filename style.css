@@ -444,16 +444,18 @@ h2{
 
 
 .play-button{
-    width:50%;
-    margin-top:20%;
-    margin-left:25%;
-    cursor:pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    width:75%;
+    height:75%;
+    margin:12.5% 0 0 12.5%;
+    background-image: url("img/play_purple.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
+.play-button:hover{
+    cursor:pointer;
+}
 html::-webkit-scrollbar{
 display:none;
 }
