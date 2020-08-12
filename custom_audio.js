@@ -6,6 +6,7 @@ const playerID = "audio-player" //constant id
 const playButtonID = "control-play-button" //constant id
 var player = ""
 var count = 0
+var current_play_button = null
 var check_player = setInterval(function(){ //dumb, but since the audio player is created by nav.php, which needs a little time to load, this set interval is needed
     if (document.getElementById(playerID) != null){
         clearInterval(check_player)
@@ -245,5 +246,11 @@ $(document).on("click", ".play-button", function(){ //sets the song in the music
     var player = document.getElementById(playerID)
     document.getElementById(playButtonID).style.backgroundImage = 'url("img/pause_icon.png")'
     player.play()
+    if (current_play_button != null){
+        current_play_button.src = "play_purple.png"
+    }
+    current_play_button = this
+    this.src = "pause_purple.png"
+
     
 })
