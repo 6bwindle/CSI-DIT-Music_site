@@ -250,12 +250,14 @@ $(document).on("click", ".play-button", function(){ //sets the song in the music
     else{
         var music_path = $(this).parent().parent().data("filename")
         var music_name = $(this).parent().parent().data("title")
-        document.getElementById(playerID).src = music_path
-        document.getElementById("now-playing").children[0].innerHTML = "Now Playing: " + music_name
-        count = 0
+        
         var player = document.getElementById(playerID)
-        document.getElementById(playButtonID).style.backgroundImage = 'url("img/pause_icon.png")'
+       if (!player.src.includes(music_path)){
+        document.getElementById("now-playing").children[0].innerHTML = "Now Playing: " + music_name
+           player.src = music_path;
+       }
         player.play()
+        document.getElementById(playButtonID).style.backgroundImage = 'url("img/arrow_white.png")'
         if (current_play_button != null){
             current_play_button.backgroundImage = "url(img/play_purple.png)"
         }
