@@ -232,7 +232,7 @@ $(document).on("click", "#control-play-button", function(){ //plays and pauses t
         player.pause()
         document.getElementById(playButtonID).style.backgroundImage = 'url("img/arrow_white.png")'
         if(current_play_button != null){
-            current_play_button.src="img/play_purple.png"
+            current_play_button.backgroundImage="url(img/play_purple.png)"
         }
         
     }
@@ -242,9 +242,9 @@ $(document).on("click", "#control-play-button", function(){ //plays and pauses t
 
 
 $(document).on("click", ".play-button", function(){ //sets the song in the music player when on of the play buttons is clicked
-    if (this.src.includes("img/pause_purple.png")){
+    if (this.style.backgroundImage.includes("img/pause_purple.png")){
         document.getElementById(playerID).pause()
-        this.src = "img/play_purple.png"
+        this.style.backgroundImage = "url(img/play_purple.png)"
         document.getElementById(playButtonID).style.backgroundImage = 'url("img/arrow_white.png")'
     }
     else{
@@ -257,10 +257,10 @@ $(document).on("click", ".play-button", function(){ //sets the song in the music
         document.getElementById(playButtonID).style.backgroundImage = 'url("img/pause_icon.png")'
         player.play()
         if (current_play_button != null){
-            current_play_button.src = "img/play_purple.png"
+            current_play_button.backgroundImage = "url(img/play_purple.png)"
         }
         current_play_button = this
-        this.src = "img/pause_purple.png"  
+        this.style.backgroundImage = "url(img/pause_purple.png)" 
     }
     
 
