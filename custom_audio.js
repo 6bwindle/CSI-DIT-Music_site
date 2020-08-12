@@ -259,7 +259,7 @@ $(document).on("click", ".play-button", function(){ //sets the song in the music
         player.play()
         document.getElementById(playButtonID).style.backgroundImage = 'url("img/arrow_white.png")'
         if (current_play_button != null){
-            current_play_button.backgroundImage = "url(img/play_purple.png)"
+            current_play_button.style.backgroundImage = "url(img/play_purple.png)"
         }
         current_play_button = this
         this.style.backgroundImage = "url(img/pause_purple.png)" 
