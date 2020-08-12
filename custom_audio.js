@@ -224,7 +224,7 @@ $(document).on("click", "#control-play-button", function(){ //plays and pauses t
         if (player.src !=""){
             player.play()
             document.getElementById(playButtonID).style.backgroundImage = 'url("img/pause_icon.png")'
-            current_play_button.src="img/pause_purple.png"
+            current_play_button.style.backgroundImage="url(img/pause_purple.png)"
           }
 
     }
@@ -232,7 +232,7 @@ $(document).on("click", "#control-play-button", function(){ //plays and pauses t
         player.pause()
         document.getElementById(playButtonID).style.backgroundImage = 'url("img/arrow_white.png")'
         if(current_play_button != null){
-            current_play_button.backgroundImage="url(img/play_purple.png)"
+            current_play_button.style.backgroundImage="url(img/play_purple.png)"
         }
         
     }
