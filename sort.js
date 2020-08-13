@@ -34,7 +34,7 @@ $(document).on("click", ".heading", function(){ //when one of the headings is cl
     $(".data-parent").each(function(){ //makes the background color of elements alternate
         if ($(this).is(":visible")){
         if (bg_count % 2 == 0){
-            $(this).css("background-color", "#fdf")
+            $(this).css("background-color", "var(--light-colour1)")
         }
         else{
             $(this).css("background-color", "#ffffff")
@@ -60,7 +60,7 @@ document.getElementById("search-input").addEventListener("input", function(e){ /
             //checks if any of the data contains any the search term
             $(this).show()
             if (bg_count % 2 == 0){
-                $(this).css("background-color", "#fdf")
+                $(this).css("background-color", "var(--light-colour1)")
             }
             else{
                 $(this).css("background-color", "#ffffff")
