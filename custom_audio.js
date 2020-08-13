@@ -252,7 +252,8 @@ $(document).on("click", ".play-button", function(){ //sets the song in the music
         var music_name = $(this).parent().parent().data("title")
         
         var player = document.getElementById(playerID)
-       if (!player.src.includes(music_path)){
+
+       if (!player.src.includes(escape(music_path))){
         document.getElementById("now-playing").children[0].innerHTML = "Now Playing: " + music_name
            player.src = music_path;
        }
