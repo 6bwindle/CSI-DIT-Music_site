@@ -460,10 +460,10 @@ h2{
 html::-webkit-scrollbar{
 display:none;
 }
-
-#scrollable-data::-webkit-scrollbar-track{
-    color:red;
+html{
+    scrollbar-width:none;
 }
+
 #scrollable-data::-webkit-scrollbar{
     background-color:var(--light-colour1);
 }
@@ -472,6 +472,9 @@ display:none;
     background-color:rgb(255, 175, 255);
 }
 
+#scrollable-data{
+    scrollbar-color:  rgb(255,175,255) var(--light-colour1);
+}
 
 #nav-links{
     position:absolute;
