@@ -9,6 +9,8 @@
         
     </head>
     <body>
+    <script>
+    </script>
         <?php
             require_once("connect.php");
             if(session_id() == '') {

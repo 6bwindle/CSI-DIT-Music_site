@@ -14,7 +14,7 @@ if (mysqli_connect_errno()){
 
 $query = "SELECT uname, user_rights, id FROM users";
 $result = mysqli_query($usercon, $query);
-while($output = mysqli_fetch_array($result)){
+while($output = mysqli_fetch_array($result)){ //loops through each of the users.
     ?>
     <div class="acc-parent">
     <div class="acc-child">

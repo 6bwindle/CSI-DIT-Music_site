@@ -268,3 +268,4 @@ $(document).on("click", ".play-button", function(){ //sets the song in the music
 
     
 })
+
